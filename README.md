@@ -33,19 +33,28 @@ Lets' get started!
 
 3. Create service instances in CF CLI:
    xsuaa:
-     a. switch to approuter directory: cd approuter
-     b. cf create-service xsuaa application demo-approuter-xsuaa -c xs-security.json
+   ```
+     cd approuter
+   ```
+   ```
+     cf create-service xsuaa application demo-approuter-xsuaa -c xs-security.json
+   ```
     
    html5-apps-repo/app-runtime:
-     a. cf create-service html5-apps-repo app-runtime demo-approuter-html5-repo-app-runtime
+   ```
+     cf create-service html5-apps-repo app-runtime demo-approuter-html5-repo-app-runtime
+   ```
      
    html5-apps-repo/app-host:
-     a. cf create-service html5-apps-repo app-host demo-approuter-html5-repo-app-host
-     
+   ```
+     cf create-service html5-apps-repo app-host demo-approuter-html5-repo-app-host
+   ```
      
 4. In CF CLI switch directory to the 3 directories and perform cf push
 
 To run the application use url:
-https://<youruserid>-demo-approuter.<yourlandscapedomain>/myapp/index.html
+   ```
+   https://<youruserid>-demo-approuter.<yourlandscapedomain>/myapp/index.html
+   ```
      
      
