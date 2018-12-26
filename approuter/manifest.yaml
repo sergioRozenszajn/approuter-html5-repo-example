@@ -1,0 +1,19 @@
+---
+applications:
+- name: demo-approuter
+  host: <youruserid>-demo-approuter
+  memory: 256M
+
+  services:
+    - demo-approuter-xsuaa
+    - demo-approuter-html5-repo-app-runtime
+
+env:
+   destinations: >
+            [
+              {
+                "name":"demo_approuter_be",
+                "url":"https://<youruserid>-demo-approuter-backend.<yourlandscapedomain>",
+                "forwardAuthToken": true
+              }
+            ]

@@ -1,0 +1,8 @@
+---
+applications:
+- name: demo-approuter-backend
+  host: <youruserid>-demo-approuter-backend
+  memory: 128M
+
+  services:
+    - demo-approuter-xsuaa

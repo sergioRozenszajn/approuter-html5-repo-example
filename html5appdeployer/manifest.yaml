@@ -1,0 +1,8 @@
+---
+applications:
+
+- name: demo-approuter-html5-app-deployer
+  no-route: true
+  memory: 128M
+  services:
+    - demo-approuter-html5-repo-app-host
