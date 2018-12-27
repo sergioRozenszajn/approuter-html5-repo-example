@@ -1,0 +1,8 @@
+#
+#Thu Dec 27 08:48:50 UTC 2018
+URL=https\://services.odata.org
+Name=Tripv4
+ProxyType=Internet
+Type=HTTP
+Authentication=NoAuthentication
+Description=V4 Trip sample

@@ -2,11 +2,17 @@
 Using approuter and HTML5 Application Repository service example
 
 This sample project contains the main components required to develop and run a simple SAP Cloud Foundry business application.
+There are two html5 applications:
+- myapp: a simple button that by clicking it calls a nodejs server app
+- tripv4: an FLP Sandbox triggers a UI on top of the oData.org sample endpoint
+
+The following apps compose this project:
 - approuter
   * Uses the approuter npm from sap.npm.registry
   * Owns the xsuaa service instance that enables authentication and authorization
   * Owns the html5-apps-repo/app-runtime service instance that enables approuter to read static content from html5 app repo
-  * Defines a destination to access business application backend
+  * Owns the destination/lite service instance that enables approuter to access non-cf backend applications 
+  * Defines a destination to access business application local backend
   
 - backend
   * A simple nodejs express server that handles requests from approuter
@@ -14,7 +20,7 @@ This sample project contains the main components required to develop and run a s
   
 - htmlappdeployer
   * Uses the html5 app deployer npm from sap.npm.registry
-  * Contains a resources folder with one or more html5 applications that will be uploaded to html5 app repo. Note the manifest.json and xs-app.json files
+  * Contains a resources folder with 2 html5 applications that will be uploaded to html5 app repo. Note the manifest.json and xs-app.json files
   * Owns the html5-apps-repo/app-host service instance that enables html5 app deployer to upload content into html5 app repo
   
 Lets' get started!
@@ -49,12 +55,20 @@ Lets' get started!
    ```
      cf create-service html5-apps-repo app-host demo-approuter-html5-repo-app-host
    ```
+   destination/lite:
+   ```
+     cf create-service destination lite demo-approuter-destination
+   ```
+4. In destinations UI in SAP Cloud Platform cockpit import TripV4 destination (in root folder of this project)
      
-4. In CF CLI switch directory to the 3 directories and perform cf push
+5. In CF CLI switch directory to the 3 directories and perform cf push
 
-To run the application use url:
+To run the applications use urls:
    ```
    https://<youruserid>-demo-approuter.<yourlandscapedomain>/myapp/index.html
+   ```
+   ```
+   https://<youruserid>-demo-approuter.<yourlandscapedomain>/tripv4/webapp/test/flpSandbox.html
    ```
      
      
