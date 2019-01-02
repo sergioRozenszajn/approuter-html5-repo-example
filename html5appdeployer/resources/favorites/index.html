@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
+    <title>My Favorites</title>
+    <script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+            id="sap-ui-bootstrap" data-sap-ui-libs="sap.m"
+            data-sap-ui-theme="sap_bluecrystal">
+    </script>
+    <script>
+        var shoppingTile = new sap.m.GenericTile("shopping");
+        shoppingTile.setHeader("Shop");
+        shoppingTile.setSubheader("Start shopping now")
+        var tileContent = new sap.m.TileContent();
+        tileContent.setContent(new sap.ui.core.Icon({
+            src: "sap-icon://cart-4",
+            color: sap.ui.core.IconColor.Default,
+            size: "4em"
+        }));
+        shoppingTile.addTileContent(tileContent);
+        shoppingTile.attachPress(function(){
+            window.location.assign('shopping/start');
+        });
+        shoppingTile.placeAt("uiArea");
+
+        var socialTile = new sap.m.GenericTile("social");
+        socialTile.setHeader("Socialize");
+        socialTile.setSubheader("Start socializing now")
+        tileContent = new sap.m.TileContent();
+        tileContent.setContent(new sap.ui.core.Icon({
+            src: "sap-icon://decision",
+            color: sap.ui.core.IconColor.Default,
+            size: "4em"
+        }));
+        socialTile.addTileContent(tileContent);
+        socialTile.attachPress(function(){
+            window.location.assign('socialize/start');
+        });
+        socialTile.placeAt("uiArea");
+
+        var textTile = new sap.m.GenericTile("text");
+        textTile.setHeader("Text");
+        textTile.setSubheader("Start texting now")
+        tileContent = new sap.m.TileContent();
+        tileContent.setContent(new sap.ui.core.Icon({
+            src: "sap-icon://discussion-2",
+            color: sap.ui.core.IconColor.Default,
+            size: "4em"
+        }));
+        textTile.addTileContent(tileContent);
+        textTile.attachPress(function(){
+            window.location.assign('text/start');
+        });
+        textTile.placeAt("uiArea");
+
+    </script>
+</head>
+<body class="sapUiBody">
+<div id="uiArea"></div>
+</body>
+</html>

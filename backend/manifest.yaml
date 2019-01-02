@@ -1,7 +1,7 @@
 ---
 applications:
 - name: demo-approuter-backend
-  host: <youruserid>-demo-approuter-backend
+  host: i022338-demo-approuter-backend
   memory: 128M
 
   services:

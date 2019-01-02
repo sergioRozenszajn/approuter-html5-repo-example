@@ -1,0 +1,29 @@
+{
+  "authenticationMethod": "route",
+  "routes": [
+    {
+      "source": "^/shopping/start$",
+      "target": "/",
+      "destination": "shopping",
+      "csrfProtection": false
+    },
+    {
+      "source": "^/socialize/start$",
+      "target": "/",
+      "destination": "socialize",
+      "csrfProtection": false
+    },
+    {
+      "source": "^/text/start$",
+      "target": "/",
+      "destination": "texting",
+      "csrfProtection": false
+    },
+    {
+      "source": "^(/.*)",
+      "target": "$1",
+      "service": "html5-apps-repo-rt",
+      "authenticationType": "xsuaa"
+    }
+  ]
+}

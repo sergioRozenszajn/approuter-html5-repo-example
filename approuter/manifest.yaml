@@ -1,7 +1,7 @@
 ---
 applications:
 - name: demo-approuter
-  host: <youruserid>-demo-approuter
+  host: i022338-demo-approuter
   memory: 256M
 
   services:
@@ -14,7 +14,7 @@ env:
             [
               {
                 "name":"demo_approuter_be",
-                "url":"https://<youruserid>-demo-approuter-backend.<yourlandscapedomain>",
+                "url":"https://i022338-demo-approuter-backend.cfapps.sap.hana.ondemand.com",
                 "forwardAuthToken": true
               }
             ]
