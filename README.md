@@ -20,7 +20,7 @@ The following apps compose this project:
   
 - htmlappdeployer
   * Uses the html5 app deployer npm from sap.npm.registry
-  * Contains a resources folder with 2 html5 applications that will be uploaded to html5 app repo. Note the manifest.json and xs-app.json files
+  * Contains a resources folder with 3 html5 applications that will be uploaded to html5 app repo. Note the manifest.json and xs-app.json files
   * Owns the html5-apps-repo/app-host service instance that enables html5 app deployer to upload content into html5 app repo
   
 Lets' get started!
@@ -59,7 +59,7 @@ Lets' get started!
    ```
      cf create-service destination lite demo-approuter-destination
    ```
-4. In destinations UI in SAP Cloud Platform cockpit import TripV4 destination (in root folder of this project)
+4. In destinations UI in SAP Cloud Platform cockpit import all destinations in the destinations folder
      
 5. In CF CLI switch directory to the 3 directories and perform cf push
 
@@ -69,6 +69,9 @@ To run the applications use urls:
    ```
    ```
    https://<youruserid>-demo-approuter.<yourlandscapedomain>/tripv4/webapp/test/flpSandbox.html
+   ```
+   ```
+   https://<youruserid>-demo-approuter.<yourlandscapedomain>/favorites/index.html
    ```
      
      

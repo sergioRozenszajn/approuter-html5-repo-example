@@ -1,0 +1,7 @@
+#
+#Mon Jan 21 14:52:09 UTC 2019
+URL=https\://www.ebay.com
+Name=shopping
+ProxyType=Internet
+Type=HTTP
+Authentication=NoAuthentication

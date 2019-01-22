@@ -1,0 +1,7 @@
+#
+#Mon Jan 21 14:53:23 UTC 2019
+URL=https\://www.facebook.com
+Name=socialize
+ProxyType=Internet
+Type=HTTP
+Authentication=NoAuthentication

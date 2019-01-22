@@ -1,0 +1,7 @@
+#
+#Mon Jan 21 14:53:33 UTC 2019
+URL=https\://www.whatsapp.com/
+Name=texting
+ProxyType=Internet
+Type=HTTP
+Authentication=NoAuthentication
