@@ -20,7 +20,7 @@
         }));
         shoppingTile.addTileContent(tileContent);
         shoppingTile.attachPress(function(){
-            window.location.assign('../../../destinations/shopping/start');
+            window.location.assign('shopping/start');
         });
         shoppingTile.placeAt("uiArea");
 
@@ -35,13 +35,13 @@
         }));
         socialTile.addTileContent(tileContent);
         socialTile.attachPress(function(){
-            window.location.assign('../../../destinations/socialize/start');
+            window.location.assign('socialize/start');
         });
         socialTile.placeAt("uiArea");
 
         var textTile = new sap.m.GenericTile("text");
-        textTile.setHeader("Text");
-        textTile.setSubheader("Start texting now")
+        textTile.setHeader("Chat");
+        textTile.setSubheader("Start chatting now");
         tileContent = new sap.m.TileContent();
         tileContent.setContent(new sap.ui.core.Icon({
             src: "sap-icon://discussion-2",
@@ -50,6 +50,7 @@
         }));
         textTile.addTileContent(tileContent);
         textTile.attachPress(function(){
+            //window.location.assign('/html5repo.chatsvc/index.html');
             window.location.assign('text/start');
         });
         textTile.placeAt("uiArea");
