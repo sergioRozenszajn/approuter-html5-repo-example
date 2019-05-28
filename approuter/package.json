@@ -1,7 +1,7 @@
 {
   "name": "demo-approuter",
   "engines": {
-    "node": ">=4.0.0 <7.0.0"
+    "node": "^8.0.0"
   },
   "dependencies": {
     "@sap/approuter": "6.0.0"
