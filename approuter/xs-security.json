@@ -1,12 +1,6 @@
 {
   "xsappname"   : "demo-approuter",
   "tenant-mode" : "dedicated",
-  "scopes": [
-    {
-      "name": "uaa.user",
-      "description": "UAA"
-    }
-  ],
   "role-templates": [
     {
       "name": "Token_Exchange",
