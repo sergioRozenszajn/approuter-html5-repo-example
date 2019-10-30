@@ -5,6 +5,7 @@ This sample project contains the main components required to develop and run a s
 There are two html5 applications:
 - myapp: a simple button that by clicking it calls a nodejs server app
 - tripv4: an FLP Sandbox triggers a UI on top of the oData.org sample endpoint
+- MyFavorites: A UI with tiles that trigger navigation via destinations from destination service
 
 The following apps compose this project:
 - approuter
