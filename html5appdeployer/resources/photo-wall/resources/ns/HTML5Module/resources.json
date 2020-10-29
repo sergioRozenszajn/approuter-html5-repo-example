@@ -1,0 +1,81 @@
+{
+    "resources": [
+        {
+            "name": "../hangman/Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "../hangman/manifest.json"
+        },
+        {
+            "name": "../hangman/model/models.js"
+        },
+        {
+            "name": "../hangman/localService/mockserver.js"
+        },
+        {
+            "name": "../hangman/controller/View1.controller.js"
+        },
+        {
+            "name": "../hangman/script.js"
+        },
+        {
+            "name": "../hangman/photo-script.js"
+        },
+        {
+            "name": "../hangman/Component.js"
+        },
+        {
+            "name": "../hangman/manifest-bundle.zip"
+        },
+        {
+            "name": "../hangman/i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "../hangman/model/models-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../hangman/localService/mockserver-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../hangman/controller/View1-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../hangman/script-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../hangman/photo-script-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../hangman/Component-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../sap-ui-version.json"
+        },
+        {
+            "name": "../hangman/view/View1.view.xml"
+        },
+        {
+            "name": "../hangman/css/style.css"
+        },
+        {
+            "name": "../hangman/style.css"
+        },
+        {
+            "name": "../hangman/indexOld.html"
+        },
+        {
+            "name": "../hangman/index.html"
+        },
+        {
+            "name": "../hangman/forbidden.html"
+        }
+    ]
+}

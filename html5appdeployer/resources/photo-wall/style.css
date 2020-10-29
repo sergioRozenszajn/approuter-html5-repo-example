@@ -1,0 +1,44 @@
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.fd-page {
+  min-height: 100%
+}
+
+#title {
+  text-align: center;
+  font-size: 4em;
+}
+
+#characters button {
+  margin: 5px;
+}
+
+#word {
+  text-align: center;
+  letter-spacing: 1em;
+  margin-bottom: 15px;
+}
+
+section * {
+  display: block;
+  margin: 0px auto;
+}
+
+#create, #photo{
+  margin-top: 15px;
+}
+
+#video, #canvas{
+    transform: rotateY(180deg);
+    -webkit-transform:rotateY(180deg); /* Safari and Chrome */
+    -moz-transform:rotateY(180deg); /* Firefox */
+}
+
+.label {
+  color: dimgray;
+  font-weight: bold;
+}

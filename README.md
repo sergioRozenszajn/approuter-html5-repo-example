@@ -64,6 +64,8 @@ Lets' get started!
      
 5. In CF CLI switch directory to the 3 directories and perform cf push
 
+Generate private key from certificate: openssl pkcs12 -in cert.p12 -out key.txt -nodes -nocerts
+
 To run the applications use urls:
    ```
    https://<youruserid>-demo-approuter.<yourlandscapedomain>/myapp/index.html
@@ -76,3 +78,11 @@ To run the applications use urls:
    ```
      
      
+     https:// test-approuterbs.cfapps.sap.hana.ondemand.com/cp.portal
+     
+     https://saas-approuter-consumer3-ias-approuter.cfapps.sap.hana.ondemand.com/favorites/index.html
+     
+     https://ias-standalone-ar-consumer-ias-approuter.cfapps.sap.hana.ondemand.com/favorites/index.html
+    
+/////IAS Support///////
+https:ias-a4amq7ufs-ias-approuter.cfapps.sap.hana.ondemand.com/favorites/index.html

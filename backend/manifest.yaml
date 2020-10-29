@@ -1,8 +1,8 @@
 ---
 applications:
 - name: demo-approuter-backend
-  host: i022338-demo-approuter-backend
+  host: ias-approuter-backend
   memory: 128M
 
   services:
-    - demo-approuter-xsuaa
+    - ias-provider-ias

@@ -1,20 +1,65 @@
 ---
 applications:
-- name: demo-approuter
-  host: i022338-demo-approuter
+- name: ias-approuter
   memory: 256M
+  routes:
+    - route: "ias-provider-ias-approuter.cfapps.sap.hana.ondemand.com"
+    - route: "ias-consumer-xsuaa-ias-approuter.cfapps.sap.hana.ondemand.com"
+    - route: "36fd578e-b5cd-4376-bd7e-903a9f78ea55--a4amq7ufs-ias-approuter.cfapps.sap.hana.ondemand.com"
+    - route: "802bdb6d-4fbc-4cc6-94ab-9975d44fe672--akv1k9tpg-ias-approuter.cert.cfapps.sap.hana.ondemand.com"
 
   services:
-    - demo-approuter-xsuaa
-    - demo-approuter-html5-repo-app-runtime
-    - demo-approuter-destination
+    - ias-provider-ias
+    - ias-provider-app-runtime
+    - ias-provider-destination
+    - ias-provider-connectivity
+    - ias-provider-xsuaa
+    - ias-provider-saas-registry
+    - ias-provider-subscription-manager
+    - ias-provider-photo-wall
+    - ias-provider-chat
 
-env:
-   destinations: >
+  env:
+     SESSION_TIMEOUT: 30
+     TENANT_HOST_PATTERN: "^(.*)-ias-approuter.cfapps.sap.hana.ondemand.com"
+     IAS_PRIVATE_KEY: "-----BEGIN PRIVATE KEY-----
+     \nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCq9jsGY1zvqTod
+       t+yd7Cv4/VKH/2ljrOs5opuKkPnm98XRdv4DqyV8K9bcxUzn9IScglx0y7mfrZaL
+       oJHytBHZ0Fz59UMvCqdv0cXm/oY98dHtrr0oMNi1V3YuvPUOIwR9DbF+4v10rOrz
+       5cfHEJB6HBAtaCIVEMLSS3AzFa8hLiVBYBtpk93aJ4H+JmXD1MvcdxvHXJIednFO
+       GGH3EqTejLi7SCKeqpxYOB8z58FuG3B9gz26VwgVSe1PKt67zn+YDAB75H7sC93l
+       8Tf2RWqBdyFHcg3RiEpAw26th9Lr3LHvIS1tJGbNmFmKOe5shoYQaRVxDCUFHBFe
+       8v7W+8JbAgMBAAECggEAAhDntbQNs3fAFAvc+CuafG/TR4F2rJWyYgftCUenPXtR
+       EK73cuPmmBGPjytzOnph/+Iza9XqcFuQri9KlDxI2vEBrqOgJDlkvJ00Xw5EYQtD
+       FjQ+ZPXyKH7eFsKB06Hos/ouYvIrTfWpATmNqIIyvMcKCwJvJwIE2LXArV1duHDp
+       Q9yGQv07TBb45+yC0p1Ek8LJKojFmzbkC4q+RbtTT12X0TXHvnoAAIGwJ1f6G3j8
+       BpYAt0iWYN7wywMfthc+1SzTblx83kcuxyFhQaBbOju7hfB09Ii0f2uoGmBDBun0
+       YyI6czlA7V5Vn29MH8W9YZTrEn6s0kpOmOnhH7qCgQKBgQDSzlQ6+pNjx+iE1O6p
+       xaup0wt9Gg6jcHdIHhZ+VOl0kg0lJd23fgC08xmQITMDT63VJ+3S1UEqwRW7s+s7
+       LDJpe2eGvtbAm7Xpx5CERRxKiQrI45n+Tdxeik/Ir7A2EoXdIHUfGfmnFcrj2jt/
+       1Fi7T7TGEK+eLe+s6ziuR4jtcwKBgQDPnSJ2khMhuZfhEsenlrJx3aqsePX3vA7q
+       Vy/ZIu/2ikRdquEPPyFYXNDFCuf9pnqyvvK77wHu9WTJinelwRQHwPRw82IIaOKK
+       pMqY3JlVb7V5dz6PMa4sUY2pNpz6NNHirYDgml+10eZZ9s68eIvNjtRsArSquwK7
+       VIscUsydeQKBgFwJU0MQxarpy726zZx3vhP+HWT4LG31G070O/PaFLcdUPnoB14m
+       eB6IiJ+hrwkCD64hqbbD/pixBlEWI1yJVlUxWKi+xzn+gbTYuWLWXZy5Kmk83a3m
+       xpDMKDtBYViqS6GYmyoCCDqHzDYgwJt11WuqSA21mUchXSQM6olEmCa7AoGBAK+Q
+       daBHDp6qT2EpfGSf7u6TQMzwzS9dfE92wyOfg8S8T+vVoNQ/0nbipji6bEv3CDM3
+       fhSmnL/yC/TSfzNP/xw/c3ZAmln6N/h+OkTh51h0SsYYrHJy1JLttBmv8Tc0i3hg
+       uGc2pFEg2uag61o9phuB+OgNsbHeywSXDbw52IYhAoGBAIC2D8nZoah/d9aDGkCE
+       kU7pdk0FfBDIwJnW+QwrQHkuwNMmJ92xxWFuCeG1v/lwS0yDy3RojxRidunnAdJH
+       1LAbQwUDQzkKjL7aP/HD9S1LsMa+4ezh0PH/xEygOM+CHK5Z70s62kZHno7pmcUA
+       UqeaTXfCrgcEen62R6TofPkf\n-----END PRIVATE KEY-----"
+     httpHeaders: >
+            [
+              {
+                "content-security-policy": "media-src 'self'"
+              }
+            ]
+     destinations: >
             [
               {
                 "name":"demo_approuter_be",
-                "url":"https://i022338-demo-approuter-backend.cfapps.sap.hana.ondemand.com",
+                "url":"https://ias-approuter-backend.cfapps.sap.hana.ondemand.com",
                 "forwardAuthToken": true
               }
             ]

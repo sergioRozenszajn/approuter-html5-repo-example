@@ -1,0 +1,13 @@
+{
+  "iasServiceInstanceName" : ["ias-provider-ias"],
+  "applicationType": "application",
+  "xsuaaSaasApplicationServiceInstanceId": "88afb2a5-5ab3-409a-9c0c-b70e2b86b1cf",
+  "appCallbacks" : {
+    "dependenciesCallbacks" : {
+      "url" : "https://802bdb6d-4fbc-4cc6-94ab-9975d44fe672--akv1k9tpg-ias-approuter.cert.cfapps.sap.hana.ondemand.com/v1.0/callback/zones/{zoneId}/dependencies"
+    },
+    "subscriptionCallbacks" : {
+      "url" : "https://802bdb6d-4fbc-4cc6-94ab-9975d44fe672--akv1k9tpg-ias-approuter.cert.cfapps.sap.hana.ondemand.com/v1.0/callback/zones/{zoneId}"
+    }
+  }
+}

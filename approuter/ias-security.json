@@ -1,0 +1,9 @@
+{
+  "oauth2-configuration":
+  {
+    "redirect-uris": ["https://*.cfapps.sap.hana.ondemand.com/login/callback",
+      "https://*.cfapps.sap.hana.ondemand.com/login/callback?authType=ias"]
+  },
+  "xsuaa-cross-consumption": true,
+  "multi-tenant": true
+}

@@ -1,0 +1,11 @@
+{
+  "xsappname" : "ias-provider-approuter",
+  "displayName" : "ias-provider-approuter",
+  "appUrls":
+  {
+    "getDependencies" : "https://ias-provider-ias-approuter.cfapps.sap.hana.ondemand.com/callback/v1.0/dependencies",
+    "onSubscription" : "https://ias-provider-ias-approuter.cfapps.sap.hana.ondemand.com/callback/v1.0/tenants/{tenantId}"
+  },
+  "description" : "ias-provider-approuter",
+  "category"    : "ApprouterTest"
+}

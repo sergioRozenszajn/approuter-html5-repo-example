@@ -4,11 +4,6 @@
 
   "routes": [
     {
-      "source": "^/be$",
-      "destination": "demo_approuter_be",
-      "authenticationType": "xsuaa"
-    },
-    {
       "source": "^(/.*)",
       "target": "$1",
       "service": "html5-apps-repo-rt",

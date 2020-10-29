@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-backend
+  labels:
+    app: simple-backend
+spec:
+  selector:
+      matchLabels:
+        app: simple-backend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: simple-backend
+    spec:
+      containers:
+      - image: html5-apps-repo.docker.repositories.sap.ondemand.com/simple-backend:1.0
+        imagePullPolicy: Always
+        name: simple-backend
+        env:
+          - name: PORT
+            value: "5000"
+      imagePullSecrets:
+        - name: dockersecret
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: simple-backend-ingress
+  namespace: kube-system
+spec:
+  rules:
+  - host: "simple-backend.ingress.sergio1.sergio1.shoot.canary.k8s-hana.ondemand.com"
+    http:
+     paths:
+     - backend:
+         serviceName: simple-backend-svc
+         servicePort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: simple-backend
+  name: simple-backend-svc
+  namespace: default
+spec:
+  type: NodePort
+  ports:
+    - port: 5000
+  selector:
+    app: simple-backend

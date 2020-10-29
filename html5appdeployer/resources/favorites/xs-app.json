@@ -1,6 +1,16 @@
 {
+  "welcomeFile": "index.html",
   "authenticationMethod": "route",
+  "logout": {
+    "logoutEndpoint": "/my/logout",
+    "logoutPage": "/logout-page.html"
+  },
   "routes": [
+    {
+      "source": "^/be$",
+      "destination": "demo_approuter_be",
+      "authenticationType": "ias"
+    },
     {
       "source": "^/shopping/start$",
       "target": "/",
@@ -8,22 +18,28 @@
       "csrfProtection": false
     },
     {
-      "source": "^/socialize/start$",
-      "target": "/",
-      "destination": "socialize",
-      "csrfProtection": false
+      "source": "^/sap/opu/odata(.*)",
+      "target": "/sap/opu/odata$1",
+      "destination": "UIA-000",
+      "authenticationType": "ias"
     },
     {
-      "source": "^/text/start$",
-      "target": "/",
-      "destination": "texting",
-      "csrfProtection": false
+      "source": "^/logout-page.html$",
+      "service": "html5-apps-repo-rt",
+      "authenticationType": "none"
+    },
+    {
+      "source": "^/index.html$",
+      "service": "html5-apps-repo-rt",
+      "authenticationType": "ias",
+      "scope": ["$XSAPPNAME.viewer"],
+      "cacheControl": "no-cache, no-store, must-revalidate"
     },
     {
       "source": "^(/.*)",
       "target": "$1",
       "service": "html5-apps-repo-rt",
-      "authenticationType": "xsuaa"
+      "authenticationType": "ias"
     }
   ]
 }

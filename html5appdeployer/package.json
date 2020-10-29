@@ -1,10 +1,10 @@
 {
   "name": "demo-approuter-html5appdeployer",
   "engines": {
-    "node": ">=6.0.0"
+    "node": "^10.0.0"
   },
   "dependencies": {
-    "@sap/html5-app-deployer": "^2.0.3"
+    "@sap/html5-app-deployer": "2.0.3"
   },
   "scripts": {
     "start": "node node_modules/@sap/html5-app-deployer/index.js"

@@ -3,13 +3,17 @@
 
 var express = require('express');
 var bodyParser = require('body-parser');
+var jwtDecode  = require('jwt-decode');
 
 var port = process.env.PORT || 3000;
 var app = express();
 
 app.get('/be', function(req,res){
-    res.setHeader('Content-Type', 'text/plain');
-    res.end("Backend has been reached\n");
+    console.log("====Req headers ",req.headers);
+    let token = req.headers['authorization'];
+    let decodedToken = jwtDecode(token);
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify(decodedToken));
 });
 
 app.listen(port);

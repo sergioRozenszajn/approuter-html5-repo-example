@@ -3,14 +3,28 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
-    <title>My Favorites</title>
+    <title>My Favorites Demo</title>
     <script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
             id="sap-ui-bootstrap" data-sap-ui-libs="sap.m"
             data-sap-ui-theme="sap_bluecrystal">
     </script>
     <script>
+        function sendToBackend(backend){
+            jQuery.sap.require("sap.m.MessageBox");
+            jQuery.ajax({
+                type: "GET",
+                contentType: "application/json",
+                url: backend,
+                success: function(data, textStatus, jqXHR) {
+                    sap.m.MessageBox.show(JSON.stringify(data,null, 4), { title: "Success - IAS Token" });
+                },
+                error:  function(oError) {
+                    sap.m.MessageBox.show(oError.responseText, { title: "Error"});
+                }
+            });
+        }
         var shoppingTile = new sap.m.GenericTile("shopping");
-        shoppingTile.setHeader("Shop");
+        shoppingTile.setHeader("Shopping");
         shoppingTile.setSubheader("Start shopping now")
         var tileContent = new sap.m.TileContent();
         tileContent.setContent(new sap.ui.core.Icon({
@@ -24,20 +38,20 @@
         });
         shoppingTile.placeAt("uiArea");
 
-        var socialTile = new sap.m.GenericTile("social");
-        socialTile.setHeader("Socialize");
-        socialTile.setSubheader("Start socializing now")
+        var onPremTile = new sap.m.GenericTile("onPremise");
+        onPremTile.setHeader("onPremise");
+        onPremTile.setSubheader("Access on premise system now")
         tileContent = new sap.m.TileContent();
         tileContent.setContent(new sap.ui.core.Icon({
             src: "sap-icon://decision",
             color: sap.ui.core.IconColor.Default,
             size: "4em"
         }));
-        socialTile.addTileContent(tileContent);
-        socialTile.attachPress(function(){
-            window.location.assign('socialize/start');
+        onPremTile.addTileContent(tileContent);
+        onPremTile.attachPress(function(){
+            sendToBackend('sap/opu/odata/SAP/APPROUTER_HELIUM_SRV/$metadata');
         });
-        socialTile.placeAt("uiArea");
+        onPremTile.placeAt("uiArea");
 
         var textTile = new sap.m.GenericTile("text");
         textTile.setHeader("Chat");
@@ -50,11 +64,55 @@
         }));
         textTile.addTileContent(tileContent);
         textTile.attachPress(function(){
-            //window.location.assign('/html5repo.chatsvc/index.html');
-            window.location.assign('text/start');
+            window.location.assign('/comsapappscollaboration.chat/index.html');
+            //window.location.assign('text/start');
         });
         textTile.placeAt("uiArea");
 
+        var photoWallTile = new sap.m.GenericTile("photoWallTile");
+        photoWallTile.setHeader("Photo-wall");
+        photoWallTile.setSubheader("Start Photo-wall now");
+        tileContent = new sap.m.TileContent();
+        tileContent.setContent(new sap.ui.core.Icon({
+            src: "sap-icon://employee",
+            color: sap.ui.core.IconColor.Default,
+            size: "4em"
+        }));
+        photoWallTile.addTileContent(tileContent);
+        photoWallTile.attachPress(function(){
+            window.location.assign('/photowall/index.html');
+        });
+        photoWallTile.placeAt("uiArea");
+
+        var cfbeTile = new sap.m.GenericTile("CFbe");
+        cfbeTile.setHeader("Cloud Foundry Backend");
+        cfbeTile.setSubheader("Get data from Cloud Foundry");
+        tileContent = new sap.m.TileContent();
+        tileContent.setContent(new sap.ui.core.Icon({
+            src: "sap-icon://process",
+            color: sap.ui.core.IconColor.Default,
+            size: "4em"
+        }));
+        cfbeTile.addTileContent(tileContent);
+        cfbeTile.attachPress(function(){
+            sendToBackend('be');
+        });
+        cfbeTile.placeAt("uiArea");
+
+        var logoutTile = new sap.m.GenericTile("logout");
+        logoutTile.setHeader("Logout");
+        logoutTile.setSubheader("Logout");
+        tileContent = new sap.m.TileContent();
+        tileContent.setContent(new sap.ui.core.Icon({
+            src: "sap-icon://log",
+            color: sap.ui.core.IconColor.Default,
+            size: "4em"
+        }));
+        logoutTile.addTileContent(tileContent);
+        logoutTile.attachPress(function(){
+            window.location.replace('my/logout');
+        });
+        logoutTile.placeAt("uiArea");
     </script>
 </head>
 <body class="sapUiBody">

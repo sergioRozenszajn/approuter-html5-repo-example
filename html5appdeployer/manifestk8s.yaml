@@ -1,0 +1,7 @@
+---
+applications:
+- name: k8sdemodeployer
+  no-route: true
+  memory: 128M
+  services:
+    - k8sdt1

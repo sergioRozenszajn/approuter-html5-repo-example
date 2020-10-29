@@ -1,12 +1,41 @@
 {
-  "xsappname"   : "demo-approuter",
-  "tenant-mode" : "dedicated",
+  "xsappname"   : "ias-provider-approuter",
+  "tenant-mode" : "shared",
+  "scopes": [
+    {
+      "name":"$XSAPPNAME.Callback",
+      "description":"With this scope set, the callbacks for tenant onboarding, offboarding and getDependencies can be called.",
+      "grant-as-authority-to-apps":[
+        "$XSAPPNAME(application,sap-provisioning,tenant-onboarding)"
+      ]
+    },
+    {
+      "name": "$XSAPPNAME.viewer",
+      "description": "FavoritesViewer"
+    }
+  ],
   "role-templates": [
     {
-      "name": "Token_Exchange",
-      "description": "UAA",
+      "name": "Viewer",
+      "description": "Favorites viewer",
       "scope-references": [
-        "uaa.user"
+        "$XSAPPNAME.viewer"
+      ]
+    },
+    {
+      "name":"MultitenancyCallbackRoleTemplate",
+      "description":"Call callback-services of applications",
+      "scope-references":[
+        "$XSAPPNAME.Callback"
+      ]
+    }
+  ],
+  "role-collections": [
+    {
+      "name": "FavoritesViewer",
+      "description": "Favorites Viewer",
+      "role-template-references": [
+        "$XSAPPNAME.Viewer"
       ]
     }
   ]

@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <script src="script.js"></script>
+    <script src="photo-script.js"></script>
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/fundamental-styles@0.7.0/dist/fundamental-styles.css">
+    <link rel="stylesheet" href="../style.css">
+    </style>
+</head>
+
+<body>
+    <main class="fd-page">
+
+        <section class="fd-section" style="height: 100px;"></section>
+
+        <section class="fd-section" style="margin: 0px auto; max-width:700px; text-align: center">
+            <h3 id="title">Welcome to Hangman!</h3>
+            <img id="picture" src="img/0.png" width="400" class="center"></img>
+            <h1 id="word">_ _ _ _ _ </h1>
+            <div id="characters"></div>
+            <button id="create" class="fd-button">New Game</button>
+            <button id="photo" class="fd-button">Take a winning picture</button>
+        </section>
+
+        <div id="photo-dialog" class="fd-dialog-docs-static fd-dialog">
+            <div class="fd-dialog__content">
+
+                <header class="fd-dialog__header fd-bar">
+                    <div class="fd-bar__left">
+                        <h1 class="fd-dialog__title">Your winning picture!</h1>
+                    </div>
+                    <div class="fd-bar__right">
+                        <button id="photo-dialog-close" class="fd-button fd-button--transparent sap-icon--decline"></button>
+                    </div>
+                </header>
+
+                <div class="fd-dialog__body fd-dialog__body--no-vertical-padding">
+                    <video id="video" width="400" height="300" autoplay style="display: block"></video>
+                    <canvas id="canvas" width="400" height="300" style="display: none"></canvas>
+                </div>
+
+                <footer class="fd-dialog__footer fd-bar fd-bar--footer">
+                    <div class="fd-bar__right">
+                        <div class="fd-bar__element">
+                            <button id="snap" class="fd-dialog__decisive-button fd-button fd-button--compact">Snap Photo</button>
+                        </div>
+                        <div class="fd-bar__element">
+                            <button id="reset" style="display: none" class="fd-dialog__decisive-button fd-button fd-button--compact">Take another Photo</button>
+                        </div>
+                        <div class="fd-bar__element">
+                            <button id="send" style="display: none" class="fd-dialog__decisive-button fd-button fd-button--compact">Send</button>
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
