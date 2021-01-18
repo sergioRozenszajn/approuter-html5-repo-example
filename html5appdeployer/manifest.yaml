@@ -5,4 +5,4 @@ applications:
   no-route: true
   memory: 128M
   services:
-    - appHost1
+    - test-dt3

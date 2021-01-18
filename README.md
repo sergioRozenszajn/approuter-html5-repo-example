@@ -85,4 +85,15 @@ To run the applications use urls:
      https://ias-standalone-ar-consumer-ias-approuter.cfapps.sap.hana.ondemand.com/favorites/index.html
     
 /////IAS Support///////
-https:ias-a4amq7ufs-ias-approuter.cfapps.sap.hana.ondemand.com/favorites/index.html
+https:36fd578e-b5cd-4376-bd7e-903a9f78ea55--a4amq7ufs-ias-approuter.cfapps.sap.hana.ondemand.com/favorites/index.html
+
+https://ias-provider-ias-approuter.cfapps.sap.hana.ondemand.com/favorites/index.html
+
+https://36fd578e-b5cd-4376-bd7e-903a9f78ea55--a4amq7ufs-ias-approuter.cfapps.sap.hana.ondemand.com/favorites/logout-page.html
+
+https://36fd578e-b5cd-4376-bd7e-903a9f78ea55--a4amq7ufs-ias-approuter.cfapps.sap.hana.ondemand.com/favorites/index.html
+
+https://802bdb6d-4fbc-4cc6-94ab-9975d44fe672--akv1k9tpg-ias-approuter.cfapps.sap.hana.ondemand.com/favorites/index.html
+
+cf bs ias-approuter ias-provider-ias -c ias-bindingIASProvider.json
+
