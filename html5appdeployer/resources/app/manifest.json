@@ -1,7 +1,7 @@
 {
   "_version": "1.7.0",
   "sap.app": {
-    "id": "myapp",
+    "id": "myapp5",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {

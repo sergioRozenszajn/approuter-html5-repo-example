@@ -1,4 +1,4 @@
-/*eslint no-console: 0*/
+clearInterval()/*eslint no-console: 0*/
 "use strict";
 
 var express = require('express');

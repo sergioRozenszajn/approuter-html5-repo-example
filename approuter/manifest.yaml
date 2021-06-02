@@ -4,7 +4,7 @@ applications:
   memory: 256M
   routes:
     - route: "ias-provider-ias-approuter.cfapps.sap.hana.ondemand.com"
-    - route: "ias-consumer-xsuaa-ias-approuter.cfapps.sap.hana.ondemand.com"
+    - route: "ias-consumer-ias-approuter.cfapps.sap.hana.ondemand.com"
     - route: "36fd578e-b5cd-4376-bd7e-903a9f78ea55--a4amq7ufs-ias-approuter.cfapps.sap.hana.ondemand.com"
     - route: "802bdb6d-4fbc-4cc6-94ab-9975d44fe672--akv1k9tpg-ias-approuter.cert.cfapps.sap.hana.ondemand.com"
     - route: "802bdb6d-4fbc-4cc6-94ab-9975d44fe672--akv1k9tpg-ias-approuter.cfapps.sap.hana.ondemand.com"
@@ -19,10 +19,6 @@ applications:
     - ias-provider-photo-wall
     - ias-provider-chat
 
-  env:
-     DEBUG: xssec*
-     XS_APP_LOG_LEVEL: DEBUG
-     SESSION_TIMEOUT: 30
   env:
      DEBUG: xssec*
      XS_APP_LOG_LEVEL: DEBUG

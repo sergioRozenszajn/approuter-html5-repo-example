@@ -3,6 +3,8 @@ applications:
 
 - name: demo-approuter-html5-app-deployer
   no-route: true
-  memory: 128M
+  memory: 512M
   services:
-    - test-dt3
+    - appHost1
+  env:
+    ASYNC_UPLOAD: true

@@ -4,7 +4,7 @@
     "node": "^12.0.0"
   },
   "dependencies": {
-    "@sap/approuter": "git+https://github.wdf.sap.corp/xs2/approuter.js#getApplicationInstLevel"
+    "@sap/approuter": "10.4.0"
   },
   "scripts": {
     "start": "node --inspect node_modules/@sap/approuter/approuter.js"

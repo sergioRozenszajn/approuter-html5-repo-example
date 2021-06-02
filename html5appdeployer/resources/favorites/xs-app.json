@@ -7,9 +7,12 @@
   },
   "routes": [
     {
+      "source": "^/user-api(.*)",
+      "service": "sap-approuter-userapi"
+    },
+    {
       "source": "^/be$",
-      "destination": "demo_approuter_be",
-      "authenticationType": "ias"
+      "destination": "demo_approuter_be"
     },
     {
       "source": "^/shopping/start$",
@@ -20,8 +23,7 @@
     {
       "source": "^/sap/opu/odata(.*)",
       "target": "/sap/opu/odata$1",
-      "destination": "UIA-000",
-      "authenticationType": "ias"
+      "destination": "UIA-000"
     },
     {
       "source": "^/logout-page.html$",
@@ -31,7 +33,6 @@
     {
       "source": "^/index.html$",
       "service": "html5-apps-repo-rt",
-      "authenticationType": "ias",
       "scope": ["$XSAPPNAME.viewer"],
       "cacheControl": "no-cache, no-store, must-revalidate"
     },
@@ -39,7 +40,7 @@
       "source": "^(/.*)",
       "target": "$1",
       "service": "html5-apps-repo-rt",
-      "authenticationType": "ias"
+      "authenticationType": "xsuaa"
     }
   ]
 }

@@ -1,4 +1,9 @@
 {
-  "authenticationMethod": "none",
-  "routes": []
+  "authenticationMethod": "route",
+  "routes": [
+    {
+      "source": "^/user-api/currentUser$",
+      "service": "sap-approuter-userapi"
+    }
+  ]
 }
